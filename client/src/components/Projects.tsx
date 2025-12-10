@@ -18,6 +18,15 @@ const projects = [
     tags: ["Deep Learning", "CNN", "Medical AI"],
     link: "#"
   },
+  // NEW — Research Publication
+  {
+    title: "Research Publication — Brain Tumor Detection (CNN)",
+    icon: FileText,
+    description:
+      "Published in ICIIP 2023. Explored optimization of hidden CNN layers for accurate tumor classification (DOI included).",
+    tags: ["Deep Learning", "CNN", "Research", "Publication"],
+    link: "https://doi.org/10.1109/ICIIP61524.2023.10537735"
+  },
   {
     title: "Driver Drowsiness Detector",
     icon: Eye,

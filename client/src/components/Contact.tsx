@@ -2,23 +2,24 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Linkedin, Send } from "lucide-react";
 
 export default function Contact() {
+  const linkedinURL = "https://www.linkedin.com/in/devanshi-vashistha-409542205/";
+
   return (
     <section id="contact" className="py-24 bg-secondary/30 border-t border-primary/10 relative overflow-hidden">
       <div className="container px-6 mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Initiate Handshake Protocol</h2>
             <p className="text-muted-foreground mb-8 text-lg">
-              Got a project? A question? Or just want to debate whether AI will take over the world? (Spoiler: We're trying our best.)
+              Got a project? A question? Or want to debate about AI?
             </p>
-            
+
             <div className="space-y-6 font-mono text-sm">
-              <a href="mailto:devanshivashistha05@gmail.com" className="flex items-center gap-4 text-foreground hover:text-primary transition-colors group">
-                <div className="h-12 w-12 rounded-lg bg-card border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+              
+              {/* EMAIL FIXED */}
+              <a href="mailto:devanshivashistha05@gmail.com" className="flex items-center gap-4 hover:text-primary">
+                <div className="h-12 w-12 flex items-center justify-center border border-primary/20 bg-card rounded-lg text-primary">
                   <Mail size={20} />
                 </div>
                 <div>
@@ -26,9 +27,9 @@ export default function Contact() {
                   <div className="font-bold">devanshivashistha05@gmail.com</div>
                 </div>
               </a>
-              
-              <div className="flex items-center gap-4 group">
-                <div className="h-12 w-12 rounded-lg bg-card border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+
+              <div className="flex items-center gap-4">
+                <div className="h-12 w-12 flex items-center justify-center border border-primary/20 bg-card rounded-lg text-primary">
                   <Phone size={20} />
                 </div>
                 <div>
@@ -37,8 +38,8 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 group">
-                <div className="h-12 w-12 rounded-lg bg-card border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+              <div className="flex items-center gap-4">
+                <div className="h-12 w-12 flex items-center justify-center border border-primary/20 bg-card rounded-lg text-primary">
                   <MapPin size={20} />
                 </div>
                 <div>
@@ -49,52 +50,54 @@ export default function Contact() {
             </div>
 
             <div className="flex gap-4 mt-12">
-              <a 
-                href="https://linkedin.com/in/Devanshi-Vashistha"
+              {/* FIXED LINKEDIN URL */}
+              <a
+                href={linkedinURL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-none bg-[#0077b5] text-white font-medium hover:brightness-110 transition-colors flex items-center gap-2 border border-transparent hover:border-white/20"
+                className="px-6 py-3 bg-[#0077b5] text-white flex items-center gap-2 hover:brightness-110"
               >
-                <Linkedin size={18} />
-                Connect on LinkedIn
+                <Linkedin size={18} /> Connect on LinkedIn
               </a>
             </div>
           </motion.div>
 
+          {/* FIXED CONTACT FORM USING MAILTO */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="bg-card/80 backdrop-blur-md border border-primary/20 rounded-xl p-8 shadow-2xl relative"
+            className="bg-card/80 backdrop-blur-md border border-primary/20 rounded-xl p-8 shadow-2xl"
           >
-            {/* Corner accents */}
-            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary"></div>
-            <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary"></div>
-            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary"></div>
-            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary"></div>
-
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form
+              action="mailto:devanshivashistha05@gmail.com"
+              method="POST"
+              encType="text/plain"
+              className="space-y-6"
+            >
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
+                <div>
                   <label className="text-xs font-mono text-primary uppercase">User.Name</label>
-                  <input type="text" className="w-full bg-background border border-primary/20 rounded-none px-4 py-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Jane Doe" />
+                  <input name="Name" type="text" className="w-full bg-background border border-primary/20 px-4 py-2" />
                 </div>
-                <div className="space-y-2">
+
+                <div>
                   <label className="text-xs font-mono text-primary uppercase">User.Email</label>
-                  <input type="email" className="w-full bg-background border border-primary/20 rounded-none px-4 py-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="jane@example.com" />
+                  <input name="Email" type="email" className="w-full bg-background border border-primary/20 px-4 py-2" />
                 </div>
               </div>
-              <div className="space-y-2">
+
+              <div>
                 <label className="text-xs font-mono text-primary uppercase">Data.Subject</label>
-                <input type="text" className="w-full bg-background border border-primary/20 rounded-none px-4 py-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Collaboration Request" />
+                <input name="Subject" type="text" className="w-full bg-background border border-primary/20 px-4 py-2" />
               </div>
-              <div className="space-y-2">
+
+              <div>
                 <label className="text-xs font-mono text-primary uppercase">Data.Payload</label>
-                <textarea className="w-full bg-background border border-primary/20 rounded-none px-4 py-2 min-h-[150px] focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Hello World..."></textarea>
+                <textarea name="Message" className="w-full bg-background border border-primary/20 px-4 py-2 min-h-[150px]" />
               </div>
-              <button className="w-full bg-primary text-white font-bold py-3 rounded-none hover:bg-primary/90 transition-all flex items-center justify-center gap-2 group">
-                <Send size={16} className="group-hover:translate-x-1 transition-transform" />
-                TRANSMIT MESSAGE
+
+              <button className="w-full bg-primary text-white py-3 font-bold flex items-center justify-center gap-2">
+                <Send size={16} /> TRANSMIT MESSAGE
               </button>
             </form>
           </motion.div>
