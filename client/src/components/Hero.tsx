@@ -2,20 +2,23 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
 import heroBg from "@assets/generated_images/abstract_neural_network_data_visualization_for_background.png";
 import { links } from "@/data/profile";
+import EcgTrace from "@/components/EcgTrace";
+import CountUp from "@/components/CountUp";
 
 const stats = [
-  { value: "2+ yrs", label: "industry ML experience" },
-  { value: "99%", label: "accuracy, CV system in production" },
-  { value: "45k", label: "ECGs in my MSc dissertation" },
+  { value: <CountUp to={2} suffix="+ yrs" />, label: "industry ML experience" },
+  { value: <CountUp to={99} suffix="%" />, label: "accuracy, CV system in production" },
+  { value: <CountUp to={45152} />, label: "ECGs analysed in my MSc dissertation" },
   { value: "IEEE", label: "published, ICIIP 2023" },
 ];
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-44 md:pb-52">
       <div className="absolute inset-0 z-0 bg-cover bg-center opacity-10" style={{ backgroundImage: `url(${heroBg})` }} />
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-background/0 via-background/80 to-background" />
+      <EcgTrace className="absolute left-0 right-0 bottom-4 z-0 h-32 md:h-44 w-full opacity-60 pointer-events-none" />
 
       <div className="container relative z-10 px-6 mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">

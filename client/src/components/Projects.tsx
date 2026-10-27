@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { projects, type Project } from "@/data/profile";
+import DissertationExplorer from "@/components/DissertationExplorer";
 
 function Tags({ tags }: { tags: string[] }) {
   return (
@@ -37,7 +38,7 @@ export default function Projects() {
         </motion.div>
 
         {featured.map((p) => (
-          <motion.article key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10 border border-primary/30 bg-card rounded-xl p-8 md:p-10 relative overflow-hidden">
+          <motion.article key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10 border border-primary/30 bg-card rounded-xl p-5 md:p-10 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-purple-600" />
             <div className="inline-flex items-center gap-2 text-xs font-mono text-primary mb-3">
               <Star size={14} /> Featured · {p.kind}
@@ -55,6 +56,7 @@ export default function Projects() {
             </div>
             <Tags tags={p.tags} />
             <ProjectLink project={p} />
+            <DissertationExplorer />
           </motion.article>
         ))}
 
