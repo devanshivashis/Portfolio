@@ -15,7 +15,7 @@ export const experience = [
   {
     role: "AI / ML Software Developer, promoted to Team Lead",
     company: "Agsure Innovations",
-    period: "Jun 2024 - Aug 2025",
+    period: "Jun 2024 - Jul 2025",
     location: "Delhi, India",
     points: [
       "Built a real-time computer vision system that grades grain quality at 99% accuracy, replacing grading by eye.",
