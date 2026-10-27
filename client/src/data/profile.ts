@@ -41,8 +41,8 @@ export const experience = [
     location: "Remote",
     points: [
       "Generated leads and ran cold outreach to recruitment agencies across North America for a B2B SaaS product.",
-      "Supported product demos alongside Account Executives and senior leadership.",
-      "Learned to explain a technical product in plain terms to buyers who only care whether it saves them time.",
+      "Set up and coordinated live product demos with regional sales leaders.",
+      "First point of contact for prospects across North America, Europe and Asia: qualified buying interest and kept prospect records in HubSpot CRM.",
     ],
   },
   {
@@ -117,10 +117,10 @@ export const caseStudies: CaseStudy[] = [
     problem:
       "How do you show where non-disclosure agreements are being used to silence people, using only survey responses?",
     approach:
-      "With team Collective Voice, worked on a 1,656-response synthetic survey dataset and built a Sector Risk Lens tool plus a likelihood outcome ratio model, then pitched the solution to the judges.",
+      "With team Collective Voice, analysed 1,656 anonymised survey responses and built a Sector Risk Lens that scores 20+ sectors on toxicity, silencing and reporting failure, plus a logistic regression model estimating the odds of career harm after speaking up, explained in plain English for policymakers.",
     outcome:
-      "The work led to conversations with campaigners from Can't Buy My Silence UK and Speak Out Revolution, and a proposed 30-day platform build.",
-    tags: ["Data analysis", "Risk modelling", "Python", "Social impact"],
+      "Evidence such as 86.2% of people getting no meaningful intervention after speaking up, and an invitation from Speak Out Revolution to keep developing the Sector Risk Lens.",
+    tags: ["Logistic regression", "Risk scoring", "Python", "Social impact"],
   },
   {
     id: "03",
