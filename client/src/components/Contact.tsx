@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { Mail, Phone, MapPin, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, Send } from "lucide-react";
+import { links } from "@/data/profile";
 
 export default function Contact() {
-  const linkedinURL = "https://www.linkedin.com/in/devanshi-vashistha-409542205/";
+  const linkedinURL = links.linkedin;
 
   const [formData, setFormData] = useState({
     from_name: "",
@@ -25,10 +26,10 @@ export default function Contact() {
 
     emailjs
       .send(
-        "service_iuhq29k",       // ← Replace
-        "template_lm3da86",      // ← Replace
+        "service_iuhq29k",
+        "template_lm3da86",
         formData,
-        "U1meCqDPcAmHm1Jry"        // ← Replace
+        "U1meCqDPcAmHm1Jry" // EmailJS public key (safe to expose)
       )
       .then(
         () => {
@@ -51,7 +52,8 @@ export default function Contact() {
 
           {/* LEFT SIDE */}
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}>
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Initiate Handshake Protocol</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Get in touch</h2>
+            <p className="text-muted-foreground mb-8 max-w-md">Hiring for a data or ML role, or want to talk about a project? Email is quickest, and I reply within a day.</p>
 
             <div className="space-y-6 font-mono text-sm">
               <a href="mailto:devanshivashistha05@gmail.com" className="flex items-center gap-4 hover:text-primary">
@@ -59,7 +61,7 @@ export default function Contact() {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <div className="text-xs text-muted-foreground">email.send()</div>
+                  <div className="text-xs text-muted-foreground">Email</div>
                   <div className="font-bold">devanshivashistha05@gmail.com</div>
                 </div>
               </a>
@@ -69,7 +71,7 @@ export default function Contact() {
                   <Phone size={20} />
                 </div>
                 <div>
-                  <div className="text-xs text-muted-foreground">phone.call()</div>
+                  <div className="text-xs text-muted-foreground">Phone</div>
                   <div className="font-bold">+44 07887148353</div>
                 </div>
               </div>
@@ -79,7 +81,7 @@ export default function Contact() {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <div className="text-xs text-muted-foreground">location.get()</div>
+                  <div className="text-xs text-muted-foreground">Based in</div>
                   <div className="font-bold">Leicester, United Kingdom</div>
                 </div>
               </div>
@@ -94,6 +96,14 @@ export default function Contact() {
               >
                 <Linkedin size={18} /> Connect on LinkedIn
               </a>
+              <a
+                href={links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 border border-white/30 flex items-center gap-2 hover:bg-white/10"
+              >
+                <Github size={18} /> GitHub
+              </a>
             </div>
           </motion.div>
 
@@ -106,7 +116,7 @@ export default function Contact() {
             <form className="space-y-6" onSubmit={sendEmail}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="text-xs font-mono text-primary uppercase">User.Name</label>
+                  <label className="text-xs font-mono text-primary uppercase">Name</label>
                   <input
                     name="from_name"
                     value={formData.from_name}
@@ -118,7 +128,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="text-xs font-mono text-primary uppercase">User.Email</label>
+                  <label className="text-xs font-mono text-primary uppercase">Email</label>
                   <input
                     name="from_email"
                     value={formData.from_email}
@@ -131,7 +141,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="text-xs font-mono text-primary uppercase">Data.Subject</label>
+                <label className="text-xs font-mono text-primary uppercase">Subject</label>
                 <input
                   name="subject"
                   value={formData.subject}
@@ -143,7 +153,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="text-xs font-mono text-primary uppercase">Data.Payload</label>
+                <label className="text-xs font-mono text-primary uppercase">Message</label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -154,7 +164,7 @@ export default function Contact() {
               </div>
 
               <button className="w-full bg-primary text-white py-3 font-bold flex items-center justify-center gap-2">
-                <Send size={16} /> TRANSMIT MESSAGE
+                <Send size={16} /> Send message
               </button>
 
               <p className="text-sm text-primary mt-4 text-center">{status}</p>

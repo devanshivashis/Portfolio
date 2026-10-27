@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Linkedin, Mail } from "lucide-react";
+import { Menu, X, Linkedin, Mail, Github } from "lucide-react";
+import { links as profileLinks } from "@/data/profile";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navigation() {
@@ -13,9 +14,9 @@ export default function Navigation() {
   }, []);
 
   const links = [
-    { name: "About", href: "#about" },
+    { name: "Experience", href: "#about" },
     { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
+    { name: "Work", href: "#projects" },
     { name: "Contact", href: "#contact" }
   ];
 
@@ -46,6 +47,12 @@ export default function Navigation() {
             className="text-muted-foreground hover:text-primary"
           >
             <Linkedin size={20} />
+          </a>
+          <a href={profileLinks.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-primary">
+            <Github size={20} />
+          </a>
+          <a href={profileLinks.cv} download className="text-sm px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white transition">
+            CV
           </a>
         </div>
 
@@ -86,6 +93,9 @@ export default function Navigation() {
                   <Linkedin size={24} />
                 </a>
 
+                <a href={profileLinks.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                  <Github size={24} />
+                </a>
                 <a
                   href="mailto:devanshivashistha05@gmail.com"
                   className="text-muted-foreground hover:text-primary"
