@@ -16,7 +16,7 @@ export default function Navigation() {
   const links = [
     { name: "Experience", href: "#about" },
     { name: "Skills", href: "#skills" },
-    { name: "Work", href: "#projects" },
+    { name: "Case studies", href: "#projects" },
     { name: "Contact", href: "#contact" }
   ];
 

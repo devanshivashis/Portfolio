@@ -52,8 +52,8 @@ export default function Contact() {
 
           {/* LEFT SIDE */}
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}>
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Get in touch</h2>
-            <p className="text-muted-foreground mb-8 max-w-md">Hiring for a data or ML role, or want to talk about a project? Email is quickest, and I reply within a day.</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Bring me a problem</h2>
+            <p className="text-muted-foreground mb-8 max-w-md">A dataset nobody trusts, a model that works in the notebook and nowhere else, a question you are not sure data can answer. I am always up for a chat about it.</p>
 
             <div className="space-y-6 font-mono text-sm">
               <a href="mailto:devanshivashistha05@gmail.com" className="flex items-center gap-4 hover:text-primary">
